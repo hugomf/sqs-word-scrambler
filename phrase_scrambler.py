@@ -45,11 +45,6 @@ def main():
             MessageBody=message
         )
 
-    # if phrase is not None:
-    #     print(phrase)
-    # else:
-    #     print("No message received")
-
 if  __name__ == "__main__":
     while True:
         main()
