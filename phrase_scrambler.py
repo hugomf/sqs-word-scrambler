@@ -31,7 +31,7 @@ def main():
         return
     #print (f"Received message: {input_phrase}")
     phrase_id = str(uuid.uuid4())
-    words = input_phrase.split(" ")
+    words = list(input_phrase)
     size = len(input_phrase)
     word_positions = list(enumerate(words))
     # Shuffle the word positions

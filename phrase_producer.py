@@ -1,10 +1,6 @@
 import boto3
 
 
-
-
-
-
 def main():
     
     sqs = boto3.client("sqs")

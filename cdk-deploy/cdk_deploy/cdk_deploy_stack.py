@@ -36,10 +36,3 @@ class CdkDeployStack(Stack):
             value=queue.queue_url
         )
 
-        # The code that defines your stack goes here
-
-        # example resource
-        # queue = sqs.Queue(
-        #     self, "CdkDeployQueue",
-        #     visibility_timeout=Duration.seconds(300),
-        # )
