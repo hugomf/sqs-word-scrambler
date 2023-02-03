@@ -1,17 +1,13 @@
 import boto3
-
+from sqs_wrapper import SQSWrapper
 
 def main():
     
-    sqs = boto3.client("sqs")
-    queue_url = sqs.get_queue_url(QueueName="phrase-producer-queue")["QueueUrl"]
-    
+    sqs = SQSWrapper("phrase-producer-queue")
+
     phrases = [input("introduce la frase: ")]
     for i in range(len(phrases)):
-        response = sqs.send_message(
-            QueueUrl=queue_url,
-            MessageBody=phrases[i]
-        )
+        response = sqs.send_message(phrases[i])
             
 
 if __name__ == "__main__":

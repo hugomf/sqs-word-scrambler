@@ -1,32 +1,13 @@
-import boto3
 import random
 import uuid
+from sqs_wrapper import SQSWrapper
 
-# Define a function to receive messages from the SQS queue
-def receive_message(sqs, queue_url):
-    response = sqs.receive_message(
-        QueueUrl=queue_url,
-        MaxNumberOfMessages=1,
-        WaitTimeSeconds=20
-    )
-    if "Messages" in response:
-        message = response["Messages"][0]
-        receipt_handle = message["ReceiptHandle"]
-        word = message["Body"]
-        sqs.delete_message(
-            QueueUrl=queue_url,
-            ReceiptHandle=receipt_handle
-        )
-        return word
-    else:
-        return None
     
 def main():
-    sqs = boto3.client("sqs")
-    producer_queue_url = sqs.get_queue_url(QueueName="phrase-producer-queue")["QueueUrl"]
-    scrambler_queue_url = sqs.get_queue_url(QueueName="phrase-scrambler-queue")["QueueUrl"]
+    sqsReceiver = SQSWrapper("phrase-producer-queue")
+    sqsProducer = SQSWrapper("phrase-scrambler-queue")
 
-    input_phrase = receive_message(sqs, producer_queue_url)
+    input_phrase = sqsReceiver.receive_message()
     if input_phrase is None:
         return
     #print (f"Received message: {input_phrase}")
@@ -40,10 +21,7 @@ def main():
     for i, word in word_positions:
         message = f"{phrase_id}:{size}:{i}:{word}"
         print(f"message sent: {message}")
-        response = sqs.send_message(
-            QueueUrl=scrambler_queue_url,
-            MessageBody=message
-        )
+        sqsProducer.send_message(message)
 
 if  __name__ == "__main__":
     while True:
