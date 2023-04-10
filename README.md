@@ -1,7 +1,9 @@
 # **Python Phrase Scrambler** ![GitHub python](https://img.shields.io/badge/python-v3.7-orange)
 
 
-The initial service will scramble a phrase, which will then be sent through the network to a separate service that will unscramble it and return the original wording intact, This program is designed to explore the use of goroutines and AWS SQS for handling multi-threading and communication between different processes. There are three main programs involved:
+The initial service will scramble a phrase, which will then be sent through the network to a separate service that will unscramble it and return the original wording intact, This program is designed to explore the use of goroutines and AWS SQS for handling multi-threading and communication between different processes. 
+
+There are three main programs involved:
 
 - **phrase_producer.py:** Will producer a random phrase and push it into the AWS queue.
 
