@@ -1,4 +1,4 @@
-# **Python Phrase Scrambler** ![GitHub python](https://img.shields.io/badge/python-v3.7-blue)
+# **Python Phrase Scrambler** ![GitHub python](https://img.shields.io/badge/python-v3.7-orange)
 
 
 The inital service will br jumbling up a phrase, it is sent through the network to a separate service that unscrambles it and returns the original wording intact.
@@ -41,7 +41,7 @@ $ cdk --version # Make sure the version (2+) is installed
 
 ```shell
 	$ python phrase_producer.py  # produce the phrase
-  $ python phrase_scrambler.py # scramble the Phrase
+  	$ python phrase_scrambler.py # scramble the Phrase
 	$ python phrase_assember.py  # to rebuild the Phrase
 ```
 
