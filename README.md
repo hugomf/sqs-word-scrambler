@@ -4,14 +4,19 @@
 The inital service will br jumbling up a phrase, it is sent through the network to a separate service that unscrambles it and returns the original wording intact.
 
 This program is intended to learn about *goroutines* and **AWS SQS** to handle multi-threads and communication between different processes.
-There are two main programs:
+There are three main programs:
 
-- **Scrambler:** Will randomize the position of the word in the phrase and push it into the AWS queue.
+- **phrase_producer.py:** Will producer a random phrase and push it into the AWS queue.
 
-- **Assember:** Will fetch every word and it will assemble back to the original phrase
+- **phrase_scrambler.py:** Will fetch the message from aws queue, it will then randomize the position of the word in the phrase and push it into other the AWS queue.
+
+- **phrase_assembler.py:** Will fetch every word from AWS scrambled queue and it will assemble back to the original phrase
 
 ## **Prerequisites:**
 
+- In order to persist the message, we need to provision two queues in AWS:
+	* QUEUE1
+	* QUEUE2
 - **AWSCLIv2** Needs to be installed before using this feature, because we need to have your AWS credentials configured in order to acess **AWS SQS**:
 
 ```shell
