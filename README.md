@@ -1,4 +1,4 @@
-# **Phrase Scrambler** ![GitHub go.mod Go version of a Go module](https://img.shields.io/github/go-mod/go-version/gomods/athens.svg)
+# **Python Phrase Scrambler** ![GitHub python](https://img.shields.io/badge/python-v3.7-blue)
 
 
 The inital service will br jumbling up a phrase, it is sent through the network to a separate service that unscrambles it and returns the original wording intact.
