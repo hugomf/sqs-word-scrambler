@@ -31,14 +31,16 @@ $ cdk --version # Make sure the version (2+) is installed
 
 ## **Usage:**
 
-- To provision SQS Queues in AWS enter the following commands as follows, these queues will be created:
-	* `phrase-producer-queue`
-	* `phrase-scrambler-queue`
+- Run the following commands to provision the **AWS SQS queues:**
 ```shell
 	$ cd cdk-deploy 
 	$ cdk synth 	# verify how the queue will be created
 	$ cdk deploy	# to provision the queue
 ```
+
+- After running the command these Queues will be created:
+	* `phrase-producer-queue`
+	* `phrase-scrambler-queue`
 
 - Once the queue is provisioned successfully, run the following commands in separate windows to see how consumer and producer processes are running.
 
