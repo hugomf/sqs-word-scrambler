@@ -14,10 +14,7 @@ There are three main programs:
 
 ## **Prerequisites:**
 
-- In order to persist the message, we need to provision two queues in AWS:
-	* QUEUE1
-	* QUEUE2
-- **AWSCLIv2** Needs to be installed before using this feature, because we need to have your AWS credentials configured in order to acess **AWS SQS**:
+- In order to persist the message, we need to provision two queues in AWS, **AWSCLIv2** Needs to be installed before using this feature, because we need to have your AWS credentials configured in order to acess **AWS SQS**:
 
 ```shell
 	$ aws configure
@@ -34,8 +31,9 @@ $ cdk --version # Make sure the version (2+) is installed
 
 ## **Usage:**
 
-- Provision SQS Queue in AWS as follows, a queue named `phrase-scrambler-queue` will be created:
-
+- To provision SQS Queues in AWS enter the following commands as follows, these queues will be created:
+	* `phrase-producer-queue`
+	* `phrase-scrambler-queue`
 ```shell
 	$ cd cdk-deploy 
 	$ cdk synth 	# verify how the queue will be created
