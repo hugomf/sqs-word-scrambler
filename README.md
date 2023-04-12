@@ -1,7 +1,7 @@
 # **Python Phrase Scrambler** ![GitHub python](https://img.shields.io/badge/python-v3.7-orange)
 
 
-The initial service will scramble a phrase, which will then be sent through the network to a separate service that will unscramble it and return the original wording intact, This program is designed to explore the use of goroutines and AWS SQS for handling multi-threading and communication between different processes. 
+The initial service will scramble a phrase, which will then be sent through the network to a separate service that will unscramble it and return the original wording intact, This program is designed to explore the use of cdk in python and AWS SQS communication between different processes. 
 
 There are three main programs involved:
 
@@ -13,7 +13,7 @@ There are three main programs involved:
 
 ## **Prerequisites:**
 
-- In order to persist the message, we need to provision two queues in AWS, **AWSCLIv2** Needs to be installed before using this feature, because we need to have your AWS credentials configured in order to acess **AWS SQS**:
+- In order to persist the message, we need to provision the queues in AWS, **AWSCLIv2** Needs to be installed and the AWS credentials are need to setup and configure our queues in **AWS SQS**:
 
 ```shell
 	$ aws configure
